@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.margin-bottom-1em {
+    margin-bottom: 1em;
+}
+
+// ==========================================================================================================================================================================
+// Inputs container mixins
+// ==========================================================================================================================================================================
+@mixin input-reset {
+    mat-form-field {
+        width: 100%;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+
+    .mat-form-field-infix {
+        border-top: 0 solid transparent;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: transparent;
+        border-radius: 4px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0.8em 0 0.5em 0;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-prefix {
+        margin-right: 5px;
+        font-size: 13px;
+        color: black;
+    }
+
+    mat-error {
+        margin-top: 14px;
+        margin-left: -10px;
+    }
+
+    mat-label {
+        margin-top: 3px;
+        margin-bottom: -3px;
+    }
+
+    label {
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 1.3em 0 0.8em 0;
+    }
+}
+
+.grey-border-input-container,
+.grey-border-select-container {
+    @include input-reset;
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        border: 1px solid grey;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,29 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form {
+      width: 500px;
+      h2 {
+          text-align: center;
+      }
+      .action-btn-container {
+          display: flex;
+          justify-content: end;
+          gap: 1em;
+          button {
+              width: 130px;
+          }
+      }
+      .paragraph-router {
+        margin-top: 1rem;
+        align-items: flex-start;
+      }
+  }
+
+  .grey-border-input-container {
+    margin-bottom: 1em;
+  }
+
+}

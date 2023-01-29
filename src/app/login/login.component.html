@@ -1,0 +1,41 @@
+<div class="login-container">
+  <form [formGroup]="loginForm">
+      <h2>Login Form</h2>
+      <!-- Username -->
+      <div class="grey-border-input-container margin-bottom-1em">
+          <mat-label>Username</mat-label>
+          <mat-form-field [appearance]="'outline'" [floatLabel]="'never'" [hideRequiredMarker]="false">
+              <input matInput placeholder="email@example.com" [required]="true" type="email"
+                  formControlName="username">
+              <mat-error
+                  *ngIf="loginForm.get('username')?.hasError('pattern') && !loginForm.get('username')?.hasError('required')">
+                  Please enter a valid username
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+                  Username is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+      </div>
+      <!-- Password -->
+      <div class="grey-border-input-container margin-bottom-1em">
+          <mat-label>Password</mat-label>
+          <mat-form-field [appearance]="'outline'" [floatLabel]="'never'" [hideRequiredMarker]="false">
+              <input matInput placeholder="********" [required]="true" type="password" formControlName="password">
+              <mat-error
+                  *ngIf="loginForm.get('password')?.hasError('pattern') && !loginForm.get('password')?.hasError('required')">
+                  Your password must be at least 8 characters long
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                  Password is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+      </div>
+      <!-- Action Buttons -->
+      <div class="action-btn-container">
+        <button mat-raised-button color="primary" (click)="loginForm.reset()">Cancel</button>
+        <button mat-raised-button color="accent" (click)="login()">Login</button>
+      </div>
+      <!-- Paragraph -->
+      <p class="paragraph-router">You don't have an account register <a routerLink="/register"><strong>Here</strong></a></p>
+  </form>
+</div>
